@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <h2>Days Lived Calculator</h2>
+
+    <input type="date" name="DOB" id="dob">
+    <button onClick="cal()">Click</button>
+    <p id="result"></p>
+    <script>
+        function cal(){
+            var dob=document.getElementById("dob").value;
+            if(!dob){
+                document.getElementById("result").innerHTML="Please select a date";
+                return;
+            }
+            var dob=new Date(dob);
+            let today=new Date();
+
+            let diff = Math.abs(today-dob);
+            const diffDays = Math.ceil(diff/(1000*60*60*24));
+
+            document.getElementById("result").innerHTML = `You have lived for approximately ${diffDays} days`;
+        }
+    </script>
+</html>
