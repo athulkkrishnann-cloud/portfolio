@@ -2,154 +2,98 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* Blue Gradient Background */
 body {
     height: 100vh;
-    background: linear-gradient(135deg, #0f2027, #1e3a8a, #2563eb);
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #eaf6ff;
 }
 
-/* Card */
+/* Glass Card */
 .card {
-    width: 360px;
+    width: 380px;
+    padding: 40px;
+    text-align: center;
+    border-radius: 20px;
+
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(20px);
-    padding: 30px;
-    border-radius: 18px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: all 0.3s ease;
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+    animation: fadeIn 1.2s ease-in-out;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* Profile */
+/* Profile Image */
 .profile {
-    width: 110px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    margin-bottom: 15px;
-    border: 3px solid #60a5fa;
-    transition: 0.3s ease;
+    border: 3px solid #00c6ff;
+    margin-bottom: 20px;
+    transition: 0.4s ease;
 }
 
 .profile:hover {
     transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(0, 198, 255, 0.6);
 }
 
-/* Moving Gradient Name */
+/* Heading */
 .typing {
-    font-size: 26px;
-    font-weight: 600;
-    background: linear-gradient(
-        90deg,
-        #93c5fd,
-        #38bdf8,
-        #2563eb,
-        #38bdf8,
-        #93c5fd
-    );
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientMove 4s ease infinite,
-               floatText 3s ease-in-out infinite;
-}
-
-/* Gradient animation */
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Floating animation */
-@keyframes floatText {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-5px); }
-    100% { transform: translateY(0px); }
-}
-
-/* Role Animation */
-.role {
-    color: #bfdbfe;
+    font-size: 22px;
     margin-bottom: 15px;
-    font-weight: 500;
-    opacity: 0;
-    animation: slideIn 1.5s ease forwards;
-    animation-delay: 0.5s;
+    color: #ffffff;
 }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Paragraph Fade Up */
+/* Description */
 .fade {
-    color: #e0f2fe;
     font-size: 14px;
+    color: #cde7ff;
+    margin-bottom: 20px;
     line-height: 1.6;
-    margin-bottom: 22px;
-    opacity: 0;
-    animation: fadeUp 2s ease forwards;
-    animation-delay: 1s;
 }
 
-@keyframes fadeUp {
+/* Buttons */
+.buttons button,
+.project-btn {
+    padding: 10px 20px;
+    margin: 6px;
+    border-radius: 25px;
+    border: none;
+
+    background: rgba(0, 198, 255, 0.9);
+    color: #0f2027;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.buttons button:hover,
+.project-btn:hover {
+    background: #00aaff;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 170, 255, 0.4);
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* Buttons */
-button {
-    position: relative;
-    padding: 10px 18px;
-    margin: 6px;
-    border-radius: 10px;
-    border: none;
-    background: linear-gradient(90deg, #3b82f6, #2563eb);
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-button:hover {
-    transform: translateY(-3px);
-    background: linear-gradient(90deg, #60a5fa, #3b82f6);
-    box-shadow: 0 10px 25px rgba(59,130,246,0.4);
-}
-
-button:active {
-    transform: scale(0.95);
-}
-
-/* Project Button */
-.project {
-    width: 100%;
-    margin-top: 12px;
-    background: linear-gradient(90deg, #38bdf8, #2563eb);
-}
-
-.project:hover {
-    background: linear-gradient(90deg, #60a5fa, #3b82f6);
 }
